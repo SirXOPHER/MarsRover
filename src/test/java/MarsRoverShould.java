@@ -1,8 +1,12 @@
-import static org.assertj.core.api.Assertions.*;
-
+import junitparams.JUnitParamsRunner;
+import junitparams.Parameters;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
+@RunWith(JUnitParamsRunner.class)
 public class MarsRoverShould {
 
     private Rover rover;
@@ -19,9 +23,9 @@ public class MarsRoverShould {
 
     @Test
     public void exposeInitialLocation() {
-        assertThat(rover.getLocation()).isEqualTo(new int[] {1,2});
+        assertThat(rover.getLocation()).isEqualTo(new int[]{1, 2});
     }
-    
+
     @Test
     public void turnLeftOnce() {
         rover.turnLeft();
@@ -35,5 +39,14 @@ public class MarsRoverShould {
         rover.turnLeft();
 
         assertThat(rover.getHeading()).isEqualTo(Heading.SOUTH);
+    }
+
+    @Test
+    @Parameters({"1, WEST", "2, SOUTH", "3, EAST", "4, NORTH", "5, WEST"})
+    public void turnLeftAsOftenAsDesired(int turns, Heading expected) {
+        while (turns-- > 0) {
+            rover.turnLeft();
+        }
+        assertThat(rover.getHeading()).isEqualTo(expected);
     }
 }
