@@ -9,12 +9,12 @@ public class MarsRoverShould {
 
     @Before
     public void setUp() throws Exception {
-        rover = new Rover(new int[]{1, 2}, "N");
+        rover = new Rover(new int[]{1, 2}, Heading.NORTH);
     }
 
     @Test
     public void exposeInitialHeading() {
-        assertThat(rover.getHeading()).isEqualTo("N");
+        assertThat(rover.getHeading()).isEqualTo(Heading.NORTH);
     }
 
     @Test
@@ -26,7 +26,7 @@ public class MarsRoverShould {
     public void turnLeftOnce() {
         rover.turnLeft();
 
-        assertThat(rover.getHeading()).isEqualTo("W");
+        assertThat(rover.getHeading()).isEqualTo(Heading.WEST);
     }
 
     @Test
@@ -34,6 +34,6 @@ public class MarsRoverShould {
         rover.turnLeft();
         rover.turnLeft();
 
-        assertThat(rover.getHeading()).isEqualTo("S");
+        assertThat(rover.getHeading()).isEqualTo(Heading.SOUTH);
     }
 }

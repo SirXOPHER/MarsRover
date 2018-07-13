@@ -2,11 +2,11 @@ class Rover {
 
     private Position position;
 
-    Rover(int[] location, String heading) {
+    Rover(int[] location, Heading heading) {
         this.position = new Position(location, heading);
     }
 
-    String getHeading() {
+    Heading getHeading() {
         return this.position.getHeading();
     }
 
@@ -14,7 +14,13 @@ class Rover {
         return position.getLocation();
     }
 
-    public void turnLeft() {
-        this.position.setHeading("W");
+    void turnLeft() {
+        if (position.getHeading() == Heading.NORTH) {
+            position.setHeading(Heading.WEST);
+            return;
+        }
+        if (position.getHeading() == Heading.WEST) {
+            position.setHeading(Heading.SOUTH);
+        }
     }
 }

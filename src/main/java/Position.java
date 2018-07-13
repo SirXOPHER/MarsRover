@@ -1,9 +1,9 @@
 class Position {
 
     private int[] location;
-    private String heading;
+    private Heading heading;
 
-    Position(int[] location, String heading) {
+    Position(int[] location, Heading heading) {
         this.location = location;
         this.heading = heading;
     }
@@ -16,11 +16,11 @@ class Position {
 //        this.location = location;
 //    }
 
-    String getHeading() {
+    Heading getHeading() {
         return heading;
     }
 
-    public void setHeading(String heading) {
+    public void setHeading(Heading heading) {
         this.heading = heading;
     }
 }
