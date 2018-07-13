@@ -1,18 +1,16 @@
-public class Rover {
+class Rover {
 
-    private int[] location;
-    private String heading;
+    private Position position;
 
-    public Rover(int[] location, String heading) {
-        this.location = location;
-        this.heading = heading;
+    Rover(int[] location, String heading) {
+        this.position = new Position(location, heading);
     }
 
-    public String getHeading() {
-        return this.heading;
+    String getHeading() {
+        return this.position.getHeading();
     }
 
-    public int[] getLocation() {
-        return location;
+    int[] getLocation() {
+        return position.getLocation();
     }
 }
