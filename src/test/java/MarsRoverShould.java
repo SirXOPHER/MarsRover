@@ -23,9 +23,17 @@ public class MarsRoverShould {
     }
     
     @Test
-    public void turnLeft() {
+    public void turnLeftOnce() {
         rover.turnLeft();
 
         assertThat(rover.getHeading()).isEqualTo("W");
+    }
+
+    @Test
+    public void turnLeftTwice() {
+        rover.turnLeft();
+        rover.turnLeft();
+
+        assertThat(rover.getHeading()).isEqualTo("S");
     }
 }
