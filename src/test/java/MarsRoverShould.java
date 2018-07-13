@@ -6,6 +6,6 @@ public class MarsRoverShould {
 
     @Test
     public void exposeInitialHeading() {
-        assertThat(new Rover(heading).getHeading).isEqualTo("N");
+        assertThat(new Rover("N").getHeading()).isEqualTo("N");
     }
 }
