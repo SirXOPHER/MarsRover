@@ -21,6 +21,14 @@ class Rover {
         }
         if (position.getHeading() == Heading.WEST) {
             position.setHeading(Heading.SOUTH);
+            return;
+        }
+        if (position.getHeading() == Heading.SOUTH) {
+            position.setHeading(Heading.EAST);
+            return;
+        }
+        if (position.getHeading() == Heading.EAST) {
+            position.setHeading(Heading.NORTH);
         }
     }
 }
