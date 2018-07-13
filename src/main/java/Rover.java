@@ -13,4 +13,8 @@ class Rover {
     int[] getLocation() {
         return position.getLocation();
     }
+
+    public void turnLeft() {
+        this.position.setHeading("W");
+    }
 }

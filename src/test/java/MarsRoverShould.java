@@ -16,6 +16,9 @@ public class MarsRoverShould {
     
     @Test
     public void turnLeft() {
-        assertThat(new Rover(new int[] {1,2}, "N").turnLeft().getHeading()).isEqualTo("W");
+        Rover testRover = new Rover(new int[] {1,2}, "N");
+        testRover.turnLeft();
+
+        assertThat(testRover.getHeading()).isEqualTo("W");
     }
 }

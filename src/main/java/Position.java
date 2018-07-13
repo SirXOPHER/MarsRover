@@ -20,7 +20,7 @@ class Position {
         return heading;
     }
 
-//    public void setHeading(String heading) {
-//        this.heading = heading;
-//    }
+    public void setHeading(String heading) {
+        this.heading = heading;
+    }
 }
