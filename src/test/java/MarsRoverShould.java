@@ -1,24 +1,31 @@
 import static org.assertj.core.api.Assertions.*;
 
+import org.junit.Before;
 import org.junit.Test;
 
 public class MarsRoverShould {
 
+    private Rover rover;
+
+    @Before
+    public void setUp() throws Exception {
+        rover = new Rover(new int[]{1, 2}, "N");
+    }
+
     @Test
     public void exposeInitialHeading() {
-        assertThat(new Rover(new int[]{1, 2}, "N").getHeading()).isEqualTo("N");
+        assertThat(rover.getHeading()).isEqualTo("N");
     }
 
     @Test
     public void exposeInitialLocation() {
-        assertThat(new Rover(new int[] {1,2}, "N").getLocation()).isEqualTo(new int[] {1,2});
+        assertThat(rover.getLocation()).isEqualTo(new int[] {1,2});
     }
     
     @Test
     public void turnLeft() {
-        Rover testRover = new Rover(new int[] {1,2}, "N");
-        testRover.turnLeft();
+        rover.turnLeft();
 
-        assertThat(testRover.getHeading()).isEqualTo("W");
+        assertThat(rover.getHeading()).isEqualTo("W");
     }
 }
