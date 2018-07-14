@@ -16,20 +16,8 @@ class Rover {
 
     void turnLeft() {
         position.headLeft();
-//        if (position.getHeading() == Heading.NORTH) {
-//            position.setHeading(Heading.WEST);
-//            return;
-//        }
-//        if (position.getHeading() == Heading.WEST) {
-//            position.setHeading(Heading.SOUTH);
-//            return;
-//        }
-//        if (position.getHeading() == Heading.SOUTH) {
-//            position.setHeading(Heading.EAST);
-//            return;
-//        }
-//        if (position.getHeading() == Heading.EAST) {
-//            position.setHeading(Heading.NORTH);
-//        }
+    }
+
+    void turnRight() {
     }
 }

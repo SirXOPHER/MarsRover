@@ -49,4 +49,13 @@ public class MarsRoverShould {
         }
         assertThat(rover.getHeading()).isEqualTo(expected);
     }
+
+    @Test
+    @Parameters({"1, EAST", "2, SOUTH", "3, WEST", "4, NORTH", "5, EAST"})
+    public void turnRightAsOftenAsDesired(int turns, Heading expected) {
+        while (turns-- > 0) {
+            rover.turnRight();
+        }
+        assertThat(rover.getHeading()).isEqualTo(expected);
+    }
 }
