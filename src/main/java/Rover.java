@@ -19,5 +19,6 @@ class Rover {
     }
 
     void turnRight() {
+        position.headRight();
     }
 }

@@ -27,4 +27,8 @@ class Position {
     void headLeft() {
         heading = heading.getLeftHeading();
     }
+
+    void headRight() {
+        heading = heading.getRightHeading();
+    }
 }
