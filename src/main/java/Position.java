@@ -23,4 +23,8 @@ class Position {
     void setHeading(Heading heading) {
         this.heading = heading;
     }
+
+    void headLeft() {
+        heading = heading.getLeftHeading();
+    }
 }
