@@ -28,5 +28,14 @@ class Position {
         if (direction == Heading.NORTH) {
             location.setyCoordinate(location.getyCoordinate() + 1);
         }
+        if (direction == Heading.EAST) {
+            location.setxCoordinate(location.getxCoordinate() + 1);
+        }
+        if (direction == Heading.SOUTH) {
+            location.setyCoordinate(location.getyCoordinate() - 1);
+        }
+        if (direction == Heading.WEST) {
+            location.setxCoordinate(location.getxCoordinate() - 1);
+        }
     }
 }

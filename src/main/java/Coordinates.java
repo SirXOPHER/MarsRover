@@ -8,19 +8,19 @@ class Coordinates {
         this.yCoordinate = y;
     }
 
-    public int getxCoordinate() {
+    int getxCoordinate() {
         return xCoordinate;
     }
 
-    public void setxCoordinate(int xCoordinate) {
+    void setxCoordinate(int xCoordinate) {
         this.xCoordinate = xCoordinate;
     }
 
-    public int getyCoordinate() {
+    int getyCoordinate() {
         return yCoordinate;
     }
 
-    public void setyCoordinate(int yCoordinate) {
+    void setyCoordinate(int yCoordinate) {
         this.yCoordinate = yCoordinate;
     }
 

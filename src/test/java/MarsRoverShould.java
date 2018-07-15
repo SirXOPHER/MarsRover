@@ -65,4 +65,15 @@ public class MarsRoverShould {
 
         assertThat(rover.getLocation()).isEqualTo(new Coordinates(1, 3));
     }
+
+    @Test
+    @Parameters({"0, 1, 3", "1, 2, 2", "2, 1, 1", "3, 0, 2", "4, 1, 3"})
+    public void turnAndMoveInAllDirectons(int turns, int expected_x, int expected_y) {
+        while (turns-- > 0) {
+            rover.turnRight();
+        }
+        rover.move();
+
+        assertThat(rover.getLocation()).isEqualTo(new Coordinates(expected_x, expected_y));
+    }
 }
