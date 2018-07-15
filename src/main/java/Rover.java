@@ -21,4 +21,8 @@ class Rover {
     void turnRight() {
         position.headRight();
     }
+
+    void move() {
+        // add logic
+    }
 }

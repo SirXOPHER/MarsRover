@@ -58,4 +58,11 @@ public class MarsRoverShould {
         }
         assertThat(rover.getHeading()).isEqualTo(expected);
     }
+    
+    @Test
+    public void moveForwardOneGridPointToNewPosition() {
+        rover.move();
+
+        assertThat(rover.getLocation()).isEqualTo(new Coordinates(1, 3));
+    }
 }
