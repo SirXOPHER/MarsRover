@@ -13,7 +13,7 @@ public class MarsRoverShould {
 
     @Before
     public void setUp() throws Exception {
-        rover = new Rover(new int[]{1, 2}, Heading.NORTH);
+        rover = new Rover(new Coordinates(1, 2), Heading.NORTH);
     }
 
     @Test
@@ -23,7 +23,7 @@ public class MarsRoverShould {
 
     @Test
     public void exposeInitialLocation() {
-        assertThat(rover.getLocation()).isEqualTo(new int[]{1, 2});
+        assertThat(rover.getLocation()).isEqualTo(new Coordinates(1, 2));
     }
 
     @Test

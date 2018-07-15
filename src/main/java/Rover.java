@@ -2,15 +2,15 @@ class Rover {
 
     private Position position;
 
-    Rover(int[] location, Heading heading) {
-        this.position = new Position(location, heading);
+    Rover(Coordinates location, Heading direction) {
+        this.position = new Position(location, direction);
     }
 
     Heading getHeading() {
-        return this.position.getHeading();
+        return this.position.getDirection();
     }
 
-    int[] getLocation() {
+    Coordinates getLocation() {
         return position.getLocation();
     }
 
