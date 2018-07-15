@@ -12,17 +12,9 @@ class Position {
         return location;
     }
 
-//    public void setLocation(int[] location) {
-//        this.location = location;
-//    }
-
     Heading getDirection() {
         return direction;
     }
-
-//    void setHeading(Heading direction) {
-//        this.direction = direction;
-//    }
 
     void headLeft() {
         direction = direction.getLeftHeading();
@@ -30,5 +22,11 @@ class Position {
 
     void headRight() {
         direction = direction.getRightHeading();
+    }
+
+    void updateLocation() {
+        if (direction == Heading.NORTH) {
+            location.setyCoordinate(location.getyCoordinate() + 1);
+        }
     }
 }

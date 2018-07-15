@@ -8,6 +8,22 @@ class Coordinates {
         this.yCoordinate = y;
     }
 
+    public int getxCoordinate() {
+        return xCoordinate;
+    }
+
+    public void setxCoordinate(int xCoordinate) {
+        this.xCoordinate = xCoordinate;
+    }
+
+    public int getyCoordinate() {
+        return yCoordinate;
+    }
+
+    public void setyCoordinate(int yCoordinate) {
+        this.yCoordinate = yCoordinate;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
