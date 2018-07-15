@@ -1,14 +1,14 @@
 class Position {
 
-    private int[] location;
-    private Heading heading;
+    private Coordinates location;
+    private Heading direction;
 
-    Position(int[] location, Heading heading) {
+    Position(Coordinates location, Heading direction) {
         this.location = location;
-        this.heading = heading;
+        this.direction = direction;
     }
 
-    int[] getLocation() {
+    Coordinates getLocation() {
         return location;
     }
 
@@ -16,19 +16,19 @@ class Position {
 //        this.location = location;
 //    }
 
-    Heading getHeading() {
-        return heading;
+    Heading getDirection() {
+        return direction;
     }
 
-    void setHeading(Heading heading) {
-        this.heading = heading;
-    }
+//    void setHeading(Heading direction) {
+//        this.direction = direction;
+//    }
 
     void headLeft() {
-        heading = heading.getLeftHeading();
+        direction = direction.getLeftHeading();
     }
 
     void headRight() {
-        heading = heading.getRightHeading();
+        direction = direction.getRightHeading();
     }
 }
