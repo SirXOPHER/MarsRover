@@ -36,4 +36,13 @@ public class CommandPatternShould {
 
         assertThat(rover.getLocation()).isEqualTo(new Coordinates(1, 3));
     }
+
+    @Test
+    public void invokeCommandsFromDedicatedController() {
+        Command turnLeft = new TurnLeftCommand(rover);
+        Controller controller = new Controller();
+        controller.execute(turnLeft);
+
+        assertThat(rover.getHeading()).isEqualTo(Heading.WEST);
+    }
 }
