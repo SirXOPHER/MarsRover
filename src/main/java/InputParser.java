@@ -48,6 +48,11 @@ class InputParser {
     }
 
     List<String> getCommandSeries(String input) {
-        return null;
+        List<String> result = new ArrayList<>();
+        String[] inputArray = compartmentaliseInput(input);
+        for (int index = 2; index < inputArray.length; index += 2) {
+            result.add(inputArray[index]);
+        }
+        return result;
     }
 }
