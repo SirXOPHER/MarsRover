@@ -123,4 +123,12 @@ public class MarsRoverShould {
 
         assertThat(rover.getHeading()).isEqualTo(Heading.EAST);
     }
+
+    @Test
+    public void executeCommandToMoveForward() {
+        Command moveForward = new MoveForwardCommand(rover);
+        moveForward.execute();
+
+        assertThat(rover.getLocation()).isEqualTo(new Coordinates(1, 3));
+    }
 }
