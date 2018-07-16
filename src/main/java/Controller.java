@@ -3,7 +3,7 @@ import java.util.List;
 
 class Controller {
 
-    private List<Command> history = new ArrayList<Command>();
+    private List<Command> history = new ArrayList<>();
 
     void execute(Command command) {
         command.execute();
