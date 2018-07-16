@@ -61,7 +61,7 @@ public class MarsRoverShould {
     
     @Test
     public void moveForwardOneGridPointToNewPosition() {
-        rover.move();
+        rover.move(new Coordinates(5, 5));
 
         assertThat(rover.getLocation()).isEqualTo(new Coordinates(1, 3));
     }
@@ -72,14 +72,14 @@ public class MarsRoverShould {
         while (turns-- > 0) {
             rover.turnRight();
         }
-        rover.move();
+        rover.move(new Coordinates(5, 5));
 
         assertThat(rover.getLocation()).isEqualTo(new Coordinates(expected_x, expected_y));
     }
     
     @Test
     public void moveOverEdgeOfGridAndWrapAround() {
-        rover.move();
+        rover.move(new Coordinates(2, 2));
 
         assertThat(rover.getLocation()).isEqualTo(new Coordinates(1, 1));
     }

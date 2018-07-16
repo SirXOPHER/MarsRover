@@ -38,4 +38,10 @@ class Position {
             location.setxCoordinate(location.getxCoordinate() - 1);
         }
     }
+
+    void wrapAround(Coordinates upperRightEdge) {
+        if (location.getyCoordinate() > upperRightEdge.getyCoordinate()) {
+            location.setyCoordinate(location.getyCoordinate() % upperRightEdge.getyCoordinate());
+        }
+    }
 }

@@ -22,7 +22,8 @@ class Rover {
         position.headRight();
     }
 
-    void move() {
+    void move(Coordinates upperRightEdge) {
         position.moveForward();
+        position.wrapAround(upperRightEdge);
     }
 }
