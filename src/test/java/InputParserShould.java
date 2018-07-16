@@ -35,4 +35,9 @@ public class InputParserShould {
     public void convertGridSizeToUpperRightEdge() {
         assertThat(parser.getUpperRightEdge(testInput)).isEqualTo(new Coordinates(5, 5));
     }
+
+    @Test
+    public void determineNumberOfRovers() {
+        assertThat(parser.getFleetSize(testInput)).isEqualTo(2);
+    }
 }

@@ -13,4 +13,8 @@ class InputParser {
         String[] rawCoordinates = gridSize.split(" ");
         return new Coordinates(Integer.parseInt(rawCoordinates[0]), Integer.parseInt(rawCoordinates[1]));
     }
+
+    public int getFleetSize(String input) {
+        return 0;
+    }
 }
