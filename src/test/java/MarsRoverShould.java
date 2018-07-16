@@ -126,7 +126,8 @@ public class MarsRoverShould {
 
     @Test
     public void executeCommandToMoveForward() {
-        Command moveForward = new MoveForwardCommand(rover);
+        Coordinates upperRightEdge = new Coordinates(5, 5);
+        Command moveForward = new MoveForwardCommand(rover, upperRightEdge);
         moveForward.execute();
 
         assertThat(rover.getLocation()).isEqualTo(new Coordinates(1, 3));
