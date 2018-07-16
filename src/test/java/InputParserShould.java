@@ -16,6 +16,8 @@ public class InputParserShould {
                 "LMLMLMLMM\n" +
                 "3 3 E\n" +
                 "MMRMMRMRRM";
+
+        parser = new InputParser();
     }
 
     @Test
