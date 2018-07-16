@@ -78,7 +78,7 @@ public class MarsRoverShould {
     }
     
     @Test
-    public void moveOverEdgeOfGridAndWrapAround() {
+    public void moveOverNorthernEdgeOfGridAndWrapAround() {
         rover.move(new Coordinates(2, 2));
 
         assertThat(rover.getLocation()).isEqualTo(new Coordinates(1, 1));
