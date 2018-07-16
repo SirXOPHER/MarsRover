@@ -25,4 +25,9 @@ public class InputParserShould {
         assertThat(parser.compartmentalise(testInput)).isNotEmpty().hasSize(5);
         assertThat(parser.compartmentalise(testInput)).contains("5 5", atIndex(0)).contains("1 2 N", atIndex(1)).contains("LMLMLMLMM", atIndex(2)).contains("3 3 E", atIndex(3)).contains("MMRMMRMRRM", atIndex(4));
     }
+
+    @Test
+    public void determineGridSize() {
+        assertThat(parser.scanForGridSize()).isEqualTo("5 5");
+    }
 }
