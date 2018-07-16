@@ -115,4 +115,12 @@ public class MarsRoverShould {
 
         assertThat(rover.getHeading()).isEqualTo(Heading.WEST);
     }
+
+    @Test
+    public void executeCommandToTurnRight() {
+        Command turnRight = new TurnRightCommand(rover);
+        turnRight.execute();
+
+        assertThat(rover.getHeading()).isEqualTo(Heading.EAST);
+    }
 }
