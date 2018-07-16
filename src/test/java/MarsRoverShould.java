@@ -107,4 +107,6 @@ public class MarsRoverShould {
 
         assertThat(rover.getLocation()).isEqualTo(new Coordinates(2, 1));
     }
+
+    // SNAPSHOT - implement command design pattern next...
 }
