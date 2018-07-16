@@ -30,4 +30,9 @@ public class InputParserShould {
     public void determineGridSize() {
         assertThat(parser.scanForGridSize(parser.compartmentalise(testInput))).isEqualTo("5 5");
     }
+    
+    @Test
+    public void convertGridSizeToUpperRightEdge() {
+        assertThat(parser.getUpperRightEdge(testInput)).isEqualTo(new Coordinates(5, 5));
+    }
 }
