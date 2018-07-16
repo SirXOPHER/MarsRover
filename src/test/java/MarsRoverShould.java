@@ -67,7 +67,7 @@ public class MarsRoverShould {
     }
 
     @Test
-    @Parameters({"0, 1, 3", "1, 2, 2", "2, 1, 1", "3, 0, 2", "4, 1, 3"})
+    @Parameters({"0, 1, 3", "1, 2, 2", "2, 1, 1", "3, 5, 2", "4, 1, 3"})
     public void turnAndMoveInAllDirections(int turns, int expected_x, int expected_y) {
         while (turns-- > 0) {
             rover.turnRight();
