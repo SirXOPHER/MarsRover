@@ -42,8 +42,12 @@ public class InputParserShould {
     }
     
     @Test
-    public void registerRoverInitialPositionsAndCommandSeries() {
+    public void registerRoverInitialPositions() {
         assertThat(parser.getInitialPositions(testInput)).contains(new Position(new Coordinates(1, 2), Heading.NORTH), atIndex(0)).contains(new Position(new Coordinates(3, 3), Heading.EAST), atIndex(1));
+    }
+
+    @Test
+    public void registerRoverCommandSeries() {
         assertThat(parser.getCommandSeries(testInput)).contains("LMLMLMLMM", atIndex(0)).contains("MMRMMRMRRM", atIndex(1));
     }
 }

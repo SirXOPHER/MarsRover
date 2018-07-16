@@ -53,4 +53,29 @@ class Position {
             location.setxCoordinate(upperRightEdge.getxCoordinate());
         }
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Position position = (Position) o;
+
+        return location.equals(position.location) && direction == position.direction;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = location.hashCode();
+        result = 31 * result + direction.hashCode();
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Position{" +
+                "location=" + location.toString() +
+                ", direction=" + direction +
+                '}';
+    }
 }
