@@ -4,7 +4,7 @@ class InputParser {
         return input.split("\\n");
     }
 
-    public String scanForGridSize() {
-        return null;
+    String scanForGridSize(String[] compartments) {
+        return compartments[0];
     }
 }

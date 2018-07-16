@@ -28,6 +28,6 @@ public class InputParserShould {
 
     @Test
     public void determineGridSize() {
-        assertThat(parser.scanForGridSize()).isEqualTo("5 5");
+        assertThat(parser.scanForGridSize(parser.compartmentalise(testInput))).isEqualTo("5 5");
     }
 }
