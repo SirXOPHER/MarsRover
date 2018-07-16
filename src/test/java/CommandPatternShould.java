@@ -9,7 +9,7 @@ public class CommandPatternShould {
     private Rover rover;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         rover = new Rover(new Coordinates(1, 2), Heading.NORTH);
     }
 
