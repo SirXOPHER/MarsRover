@@ -24,7 +24,7 @@ class Position {
         direction = direction.getRightHeading();
     }
 
-    void updateLocation() {
+    void moveForward() {
         if (direction == Heading.NORTH) {
             location.setyCoordinate(location.getyCoordinate() + 1);
         }

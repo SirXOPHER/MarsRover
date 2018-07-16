@@ -23,6 +23,6 @@ class Rover {
     }
 
     void move() {
-        position.updateLocation();
+        position.moveForward();
     }
 }
