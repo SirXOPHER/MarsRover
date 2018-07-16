@@ -8,6 +8,6 @@ public class TurnRightCommand implements Command {
 
     @Override
     public void execute() {
-
+        rover.turnRight();
     }
 }
