@@ -9,6 +9,8 @@ class InputParser {
     }
 
     Coordinates getUpperRightEdge(String input) {
-        return null;
+        String gridSize = scanForGridSize(compartmentalise(input));
+        String[] rawCoordinates = gridSize.split(" ");
+        return new Coordinates(Integer.parseInt(rawCoordinates[0]), Integer.parseInt(rawCoordinates[1]));
     }
 }
