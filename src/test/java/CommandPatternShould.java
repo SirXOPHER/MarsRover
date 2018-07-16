@@ -2,6 +2,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.atIndex;
 
 public class CommandPatternShould {
 
@@ -44,5 +45,16 @@ public class CommandPatternShould {
         controller.execute(turnLeft);
 
         assertThat(rover.getHeading()).isEqualTo(Heading.WEST);
+    }
+    
+    @Test
+    public void allowToStoreCommandsHistory() {
+        Command turnLeft = new TurnLeftCommand(rover);
+        Command turnRight = new TurnRightCommand(rover);
+        Controller controller = new Controller();
+        controller.storeAndExecute(turnLeft);
+        controller.storeAndExecute(turnRight);
+
+        assertThat(controller.getHistory()).contains(turnLeft, atIndex(0)).contains(turnRight, atIndex(1));
     }
 }
