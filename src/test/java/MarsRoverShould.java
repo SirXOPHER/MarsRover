@@ -99,4 +99,12 @@ public class MarsRoverShould {
 
         assertThat(rover.getLocation()).isEqualTo(new Coordinates(2, 2));
     }
+
+    @Test
+    public void moveOverWesternEdgeOfGridAndWrapAround() {
+        rover = new Rover(new Coordinates(1, 1), Heading.WEST);
+        rover.move(new Coordinates(2, 2));
+
+        assertThat(rover.getLocation()).isEqualTo(new Coordinates(2, 1));
+    }
 }
