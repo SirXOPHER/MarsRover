@@ -10,10 +10,11 @@ class Controller {
     }
 
     void storeAndExecute(Command command) {
-
+        this.history.add(command);
+        command.execute();
     }
 
     List<Command> getHistory() {
-
+        return history;
     }
 }
