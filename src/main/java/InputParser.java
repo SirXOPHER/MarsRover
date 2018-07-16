@@ -14,7 +14,7 @@ class InputParser {
         return new Coordinates(Integer.parseInt(rawCoordinates[0]), Integer.parseInt(rawCoordinates[1]));
     }
 
-    public int getFleetSize(String input) {
-        return 0;
+    int getFleetSize(String input) {
+        return (compartmentalise(input).length - 1) / 2;
     }
 }
