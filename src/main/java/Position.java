@@ -46,5 +46,8 @@ class Position {
         if (location.getxCoordinate() > upperRightEdge.getxCoordinate()) {
             location.setxCoordinate(location.getxCoordinate() % upperRightEdge.getxCoordinate());
         }
+        if (location.getyCoordinate() < 1) {
+            location.setyCoordinate(upperRightEdge.getyCoordinate());
+        }
     }
 }
