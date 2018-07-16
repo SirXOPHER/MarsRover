@@ -22,13 +22,13 @@ public class InputParserShould {
 
     @Test
     public void compartmentaliseGivenInputForProcessing() {
-        assertThat(parser.compartmentalise(testInput)).isNotEmpty().hasSize(5);
-        assertThat(parser.compartmentalise(testInput)).contains("5 5", atIndex(0)).contains("1 2 N", atIndex(1)).contains("LMLMLMLMM", atIndex(2)).contains("3 3 E", atIndex(3)).contains("MMRMMRMRRM", atIndex(4));
+        assertThat(parser.compartmentaliseInput(testInput)).isNotEmpty().hasSize(5);
+        assertThat(parser.compartmentaliseInput(testInput)).contains("5 5", atIndex(0)).contains("1 2 N", atIndex(1)).contains("LMLMLMLMM", atIndex(2)).contains("3 3 E", atIndex(3)).contains("MMRMMRMRRM", atIndex(4));
     }
 
     @Test
     public void determineGridSize() {
-        assertThat(parser.scanForGridSize(parser.compartmentalise(testInput))).isEqualTo("5 5");
+        assertThat(parser.getGridSize(parser.compartmentaliseInput(testInput))).isEqualTo("5 5");
     }
     
     @Test
@@ -39,5 +39,11 @@ public class InputParserShould {
     @Test
     public void determineNumberOfRovers() {
         assertThat(parser.getFleetSize(testInput)).isEqualTo(2);
+    }
+    
+    @Test
+    public void registerRoverInitialPositionsAndCommandSeries() {
+        assertThat(parser.getInitialPositions(testInput)).contains(new Position(new Coordinates(1, 2), Heading.NORTH), atIndex(0)).contains(new Position(new Coordinates(3, 3), Heading.EAST), atIndex(1));
+        assertThat(parser.getCommandSeries(testInput)).contains("LMLMLMLMM", atIndex(0)).contains("MMRMMRMRRM", atIndex(1));
     }
 }
