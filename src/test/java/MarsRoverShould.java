@@ -108,5 +108,11 @@ public class MarsRoverShould {
         assertThat(rover.getLocation()).isEqualTo(new Coordinates(2, 1));
     }
 
-    // SNAPSHOT - implement command design pattern next...
+    @Test
+    public void executeCommandToTurnLeft() {
+        Command turnLeft = new TurnLeftCommand(rover);
+        turnLeft.execute();
+
+        assertThat(rover.getHeading()).isEqualTo(Heading.WEST);
+    }
 }
